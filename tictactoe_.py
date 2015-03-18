@@ -66,9 +66,21 @@ def getPlayerMove(board):
 		move = input()
 	return int(move)
 
-def chooseRandomMoveFromList():
+def chooseRandomMoveFromList(board, moveList):
+	possibleMoves = []
+	for i in movesList:
+		if isSpaceFree(board, i):
+			possibleMoves.append(i)
+	if len(possibleMoves) != 0:
+		return random.choice(possibleMoves)
+	else:
+		return None
 
-def getComputerMove():
+def getComputerMove(board, computerLetter):
+	if computerLetter == 'X':
+		playerLetter = 'O'
+	else:
+		playerletter = 'X'
 
 def isBoardFull():
 
